@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:refdata="http://www.royallondon.com/xsd/interface/util/referencedata/refdatacommon/v3" xmlns:tns="http://www.royallondon.com/xsd/internal/util/referencedata/internal" elementFormDefault="qualified" targetNamespace="http://www.royallondon.com/xsd/internal/util/referencedata/internal">
+
+
+	<import namespace="http://www.royallondon.com/xsd/interface/util/referencedata/refdatacommon/v3" schemaLocation="../../../Interface/UTIL/ReferenceData/RefDataCommon.xsd"/>
+	<element name="TypeCode" type="string"/>
+	<element name="ExpirationDateTime" type="dateTime"/>
+	<element name="Domain" type="string"/>
+	<element name="RLCode" type="string"/>
+	<element name="DomainCode" type="string"/>
+	<element name="Direction" type="string"/>
+	<element name="ExpirationDateTimes" type="tns:ExpirationDateTimesType"/>
+	
+	
+	<complexType name="ExpirationDateTimesType">
+			<sequence>
+				<element maxOccurs="unbounded" minOccurs="1" ref="tns:ExpirationDateTime"/>
+			</sequence>
+		</complexType>
+	<element name="XRefList" type="tns:XRefList"/>
+	<complexType name="XRefList">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="1" ref="tns:XRefData"/>
+		</sequence>
+	</complexType>
+
+	<element name="XRefData" type="tns:XRefData"/>
+
+	<complexType name="XRefData">
+		<sequence>
+			<element ref="tns:Domain"/>
+			<element ref="tns:TypeCode"/>
+			<element maxOccurs="unbounded" name="Item">
+				<complexType>
+					<sequence>
+						<element ref="tns:RLCode"/>
+						<element ref="tns:DomainCode"/>
+						<element ref="tns:Direction"/>
+						<element ref="tns:ExpirationDateTime"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<element name="TypeCodes" type="tns:TypeCodeType"/>
+	<complexType name="TypeCodeType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" ref="tns:TypeCode"/>
+		</sequence>
+	</complexType>
+
+
+	<element name="ConvertToXMLExtRefDataRequest" type="tns:ConvertToXMLExtRefDataType"/>
+	<element name="ConvertToXMLExtRefDataResponse" type="tns:ConvertToXMLExtRefDataType"/>
+
+	<complexType name="ConvertToXMLExtRefDataType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ExtednedReferenceData" type="refdata:ExtednedReferenceDataType"/>
+		</sequence>
+	</complexType>
+
+	<element name="PutExtendedRefDataRequest" type="tns:PutExtendedRefDataRequestType"/>
+	<element name="PutExtendedRefDataResponse" type="tns:PutExtendedRefDataResponseType"/>
+
+	<complexType name="PutExtendedRefDataRequestType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" ref="refdata:TypeCode"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PutExtendedRefDataResponseType"/>
+
+	<element name="PutXRefDataRequest" type="tns:PutXRefDataRequestType"/>
+	<element name="PutXRefDataResponse" type="tns:PutXRefDataResponseType"/>
+
+	<complexType name="PutXRefDataRequestType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" ref="refdata:Domain"/>
+			<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="PutXRefDataResponseType"/>
+
+	<element name="PutListRefDataRequest" type="tns:PutListRefDataRequestType"/>
+	<element name="PutListRefDataResponse" type="tns:PutListRefDataResponseType"/>
+
+	<complexType name="PutListRefDataRequestType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+		</sequence>
+	</complexType>
+	<complexType name="PutListRefDataResponseType"/>
+
+</schema>

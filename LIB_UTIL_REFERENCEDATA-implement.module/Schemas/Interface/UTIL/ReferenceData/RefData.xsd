@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:refdata="http://www.royallondon.com/xsd/interface/util/referencedata/refdatacommon/v3" xmlns:tns="http://www.royallondon.com/xsd/interface/util/referencedata/refdata/v3" elementFormDefault="qualified" targetNamespace="http://www.royallondon.com/xsd/interface/util/referencedata/refdata/v3">
+
+	<import namespace="http://www.royallondon.com/xsd/interface/util/referencedata/refdatacommon/v3" schemaLocation="RefDataCommon.xsd"/>
+
+
+	<element name="GetListRefDataRequest" type="tns:GetListRefDataRequestType"/>
+	<element name="GetListRefDataResponse" type="tns:GetListRefDataResponseType"/>
+
+	<complexType name="GetListRefDataRequestType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="GetListRefDataResponseType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="ReferenceData" type="refdata:ReferenceData"/>
+		</sequence>
+	</complexType>
+
+	<element name="GetExtendedRefDataRequest" type="tns:GetExtendedRefDataRequestType"/>
+	<element name="GetExtendedRefDataResponse" type="tns:GetExtendedRefDataResponseType"/>
+
+	<complexType name="GetExtendedRefDataRequestType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" ref="refdata:TypeCode"/>
+			<element maxOccurs="1" minOccurs="1" ref="refdata:FromCache"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="GetExtendedRefDataResponseType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ExtednedReferenceData" type="refdata:ExtednedReferenceDataType"/>
+		</sequence>
+	</complexType>
+
+
+
+	<element name="GetXRefDataRequest" type="tns:GetXRefDataRequestType"/>
+	<element name="GetXRefDataResponse" type="tns:GetXRefDataResponseType"/>
+
+	<complexType name="GetXRefDataRequestType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" ref="refdata:Domain"/>
+			<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="GetXRefDataResponseType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" name="XReferenceData" type="refdata:XReferenceDataType"/>
+		</sequence>
+	</complexType>
+
+
+
+	<element name="CheckLocalCacheRequest" type="tns:CheckLocalCacheRequestType"/>
+	<element name="CheckLocalCacheResponse" type="tns:CheckLocalCacheResponseType"/>
+
+	<complexType name="CheckLocalCacheRequestType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" name="ListRefData">
+				<complexType>
+					<sequence>
+						<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="ExtendedRefData">
+				<complexType>
+					<sequence>
+						<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="XRefData">
+				<complexType>
+					<sequence>
+						<element maxOccurs="1" minOccurs="1" ref="refdata:Domain"/>
+						<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="CheckLocalCacheResponseType"/>
+
+
+	<element name="RemoveLocalCacheRequest" type="tns:RemoveLocalCacheRequestType"/>
+	<element name="RemoveLocalCacheResponse" type="tns:RemoveLocalCacheResponseType"/>
+
+	<complexType name="RemoveLocalCacheRequestType">
+		<sequence>
+
+			<element default="false" name="IsAll" type="boolean"/>
+			<element maxOccurs="1" minOccurs="0" name="ListRefData">
+				<complexType>
+					<sequence>
+						<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="ExtendedRefData">
+				<complexType>
+					<sequence>
+						<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="XRefData">
+				<complexType>
+					<sequence>
+						<element maxOccurs="1" minOccurs="1" ref="refdata:Domain"/>
+						<element maxOccurs="unbounded" minOccurs="1" ref="refdata:TypeCode"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="RemoveLocalCacheResponseType"/>
+
+
+</schema>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LIB_UTIL_REFERENCEDATA
+Bundle-SymbolicName: LIB_UTIL_REFERENCEDATA-depends.plugin;singleton:=true
+Bundle-Version: 3.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: com.tibco.xml.cxf.common.annotations
+Service-Component: OSGI-INF/cxf.xml
+Export-Package: com.tibco.bw.royallondon.referencedata
+

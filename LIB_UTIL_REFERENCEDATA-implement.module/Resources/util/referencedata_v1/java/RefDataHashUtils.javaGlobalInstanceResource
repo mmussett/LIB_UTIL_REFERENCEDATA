@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:javasharedresource="http://ns.tibco.com/bw/palette/javasharedresource" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_Di3rMWptEeifePV1e99CEg" name="util.referencedata_v1.java.RefDataHashUtils" type="javasharedresource:JavaGlobalInstanceResource">
+  <jndi:configuration xsi:type="javasharedresource:JavaGlobalInstance" xmi:id="_Di3rMmptEeifePV1e99CEg" className="com.tibco.bw.royallondon.referencedata.ReferenceData" methodName="RefDataHashUtils" cleanupMethodName="done" isNewShared="true"/>
+</jndi:namedResource>

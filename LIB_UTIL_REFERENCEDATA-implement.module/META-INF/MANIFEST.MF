@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LIB_UTIL_REFERENCEDATA-implement Module
+Bundle-SymbolicName: LIB_UTIL_REFERENCEDATA-implement.module
+Bundle-Version: 3.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: TIBCO Software Inc.
+Require-Bundle: LIB_UTIL_CSF-implement.module;bundle-version="2.0.0",
+ LIB_UTIL_REFERENCEDATA-depends.plugin;bundle-version="3.0.0"
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.module; filter:="(&(name=LIB_RESOURCE_FTLCLIENT-implement.module)(version=2.0.0))",
+ com.tibco.bw.module; filter:="(&(name=LIB_UTIL_CSF-implement.module)(version=2.0.0))",
+ com.tibco.bw.module; filter:="(&(name=BT_GROUP_RefData-interface.module)(version=3.0.0))",
+ com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.java)",
+ com.tibco.bw.palette; filter:="(name=bw.xml)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.java)"
+TIBCO-BW-Version: 6.4.2 HF8 V114 2018-09-01
+Import-Package: com.tibco.security;version="2.18.303",
+ javax.xml.bind,
+ javax.xml.parsers,
+ org.slf4j;version="1.8.0"
+Provide-Capability: com.tibco.bw.module; name="LIB_UTIL_REFERENCEDATA-implement.module"; version:Version="3.0.0",
+ com.tibco.bw.schemas; ns="http://www.royallondon.com/xsd/interface/util/referencedata/refdata/v3",
+ com.tibco.bw.schemas; ns="http://www.royallondon.com/xsd/interface/util/referencedata/refdatacommon/v3",
+ com.tibco.bw.schemas; ns="http://www.royallondon.com/xsd/internal/util/referencedata/index/v3",
+ com.tibco.bw.schemas; ns="http://www.royallondon.com/xsd/internal/util/referencedata/internal",
+ com.tibco.bw.processes; name="util.referencedata_v1.sub",
+ com.tibco.bw.resources; name="util.referencedata_v1.java",
+ com.tibco.bw.processes; name="util.referencedata_v1.index",
+ com.tibco.bw.processes; name="util.referencedata_v1.getlistrefdata",
+ com.tibco.bw.processes; name="util.referencedata_v1.getxrefdata",
+ com.tibco.bw.processes; name="util.referencedata_v1.getextendedrefdata",
+ com.tibco.bw.processes; name="util.referencedata_v1.checklocalcache",
+ com.tibco.bw.processes; name="util.referencedata_v1.removelocalcache"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+TIBCO-BW-SharedModule: META-INF/module.bwm

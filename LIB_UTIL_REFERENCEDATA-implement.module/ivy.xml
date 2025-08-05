@@ -1,0 +1,20 @@
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+  <info organisation="${bw6.organisation}" module="LIB_UTIL_REFERENCEDATA-implement.module" revision="3.0"/>
+
+  <configurations defaultconf="compile" defaultconfmapping="compile->*">
+    <conf name="compile" visibility="public"/>
+    <conf name="optional" visibility="private"/>
+  </configurations>
+
+  <publications>
+    <artifact name="${ivy.module}" type="zip" conf="compile"/>
+    <artifact name="${ivy.module}" type="pom" conf="optional"/>
+  </publications>
+
+  <dependencies>
+    <dependency org="${bw6.organisation}" name="LIB_RESOURCE_FTLCLIENT-implement.module" rev="2.0+" conf="compile"/>
+    <dependency org="${bw6.organisation}" name="LIB_UTIL_CSF-implement.module" rev="2.0+" conf="compile"/>
+    <dependency org="${bw6.organisation}" name="LIB_UTIL_REFERENCEDATA-depends.plugin" rev="3.0.+" conf="compile"/>    
+	<dependency org="${bw6.organisation}.BT_GROUP_RefData" name="BT_GROUP_RefData-interface.module" rev="3.0.+" conf="compile"/>    
+  </dependencies>
+</ivy-module>

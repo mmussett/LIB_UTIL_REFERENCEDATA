@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" factory="com.tibco.xml.cxf.user.http_www.royalondon.com__xsd_plugin_util_csf_referencedata_xpath_v1_" name="cxf.user.http_www.royalondon.com__xsd_plugin_util_csf_referencedata_xpath_v1_">
+   <implementation class="com.tibco.bw.royallondon.referencedata.ReferenceData"/>
+</scr:component>

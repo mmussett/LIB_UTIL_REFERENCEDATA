@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="ExtendedReferenceDataCollections" xmlns:refdata="http://www.royallondon.com/xsd/interface/util/referencedata/refdatacommon/v3" elementFormDefault="qualified" targetNamespace="http://www.royallondon.com/xsd/interface/util/referencedata/refdatacommon/v3">
+
+	<import namespace="ExtendedReferenceDataCollections" schemaLocation="../../../../../BT_GROUP_RefData-interface.module/Schemas/Interface/BT/GROUP/RefData/ExtendedReferenceDataCollections.xsd"/>
+
+	<element name="ParentCode" type="string"/>
+	<element name="Sequence" type="integer"/>
+	<element name="LongDescription" type="string"/>
+	<element name="ShortDescription" type="string"/>
+	<element name="Name" type="string"/>
+	<element name="Code" type="string"/>
+	<element name="ParentTypeCode" type="string"/>
+	<element name="TypeDescription" type="string"/>
+	<element name="RLCode" type="string"/>
+	<element name="Direction" type="string"/>
+	<element name="RLName" type="string"/>
+	<element name="DomainCode" type="string"/>
+	<element name="DomainCodeName" type="string"/>
+	<element name="TypeCode" type="string"/>
+	<element name="Domain" type="string"/>
+	<element name="EffectiveFrom" type="dateTime"/>
+	<element name="EffectiveTo" type="dateTime"/>
+	<element name="RowID" type="string"/>
+	<element name="ExtendedData" type="string"/>
+	<element name="ExpirationDate" type="dateTime"/>
+
+	<element name="OnlyValidData" type="boolean"/>
+	<element name="FromCache" type="boolean"/>
+	
+	
+	<element name="ExtendedCode" type="refdata:ExtendedCodeType"/>
+	
+
+	<complexType name="ReferenceData">
+		<sequence>
+			<element minOccurs="1" ref="refdata:TypeCode"/>
+			<element minOccurs="1" ref="refdata:TypeDescription"/>
+			<element minOccurs="0" ref="refdata:ParentTypeCode"/>
+			<element minOccurs="0" name="Codes" type="refdata:CodesType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="ExtednedReferenceDataType">
+		<sequence>
+			<element minOccurs="1" ref="refdata:TypeCode"/>
+			<element minOccurs="1" ref="refdata:TypeDescription"/>
+			<element minOccurs="0" ref="refdata:ParentTypeCode"/>
+			<element minOccurs="0" name="Codes">
+				<complexType>
+					<sequence>
+						<element maxOccurs="unbounded" minOccurs="1" name="Code" type="refdata:ExtendedCodeType"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="CodesType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="1" name="Code" type="refdata:CodeType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="CodeType">
+		<sequence>
+			<element minOccurs="1" ref="refdata:Code"/>
+			<element minOccurs="1" ref="refdata:Name"/>
+			<element minOccurs="0" ref="refdata:ShortDescription"/>
+			<element minOccurs="0" ref="refdata:LongDescription"/>
+			<element minOccurs="0" ref="refdata:Sequence"/>
+			<element minOccurs="0" ref="refdata:ParentCode"/>
+			<element minOccurs="0" ref="refdata:EffectiveFrom"/>
+			<element minOccurs="0" ref="refdata:EffectiveTo"/>
+			<element minOccurs="0" ref="refdata:ExpirationDate"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="ExtendedCodeType">
+		<complexContent>
+			<extension base="refdata:CodeType">
+				<sequence>
+					<element minOccurs="0" ref="refdata:ExtendedData"/>
+					<choice minOccurs="0">
+						<element ref="ns1:CMP-AMCDiscountTable"/>
+						<element ref="ns1:CMP-AnnualAllowance"/>
+						<element ref="ns1:CMP-FACL"/>
+						<element ref="ns1:CMP-IncomeTaxRates"/>
+						<element ref="ns1:CMP-IncomeAffordability"/>
+						<element ref="ns1:CMP-StandardGrowthRates"/>
+						<element ref="ns1:CMP-AnnuityGuaranteePeriod"/>
+						<element ref="ns1:CMP-DocumentResendPeriod"/>
+						<element ref="ns1:CMP-Incomereleasecharge"/>
+						<element ref="ns1:CMP-MaxTaxfreecash"/>
+						<element ref="ns1:CMP-MPAA"/>
+						<element ref="ns1:CMP-MPAN"/>
+						<element ref="ns1:CMP-ProductCharges"/>
+						<element ref="ns1:CMP-BaseAnnualMgmtCharge"/>
+						<element ref="ns1:CMP-StrdLifetimeAllowance"/>
+						<element ref="ns1:CMP-IndividualLumpsumAllowance"/>
+						<element ref="ns1:CMP-Taxcharges"/>
+						<element ref="ns1:CMP-TaxReliefAge"/>
+						<element ref="ns1:CMP-Taxreliefrate"/>
+						<element ref="ns1:CMP-NextActionDate"/>
+						<element ref="ns1:CMP-TaxYear"/>
+						<element ref="ns1:Escalation"/>
+						<element ref="ns1:Frequency"/>
+						<element ref="ns1:KeyValuePair"/>
+						<element ref="ns1:Product"/>
+						<element ref="ns1:Protection"/>
+						<element ref="ns1:RLBankAccount"/>
+						<element ref="ns1:RLContactInformation"/>
+						<element ref="ns1:PlanBookletReference"/>
+						<element ref="ns1:NonAdvisedITR"/>
+						<element ref="ns1:CMP-ISACurentYearTransferContribution"/>
+						<element ref="ns1:CMP-ISAEstimatedTransferContribution"/>
+						<element ref="ns1:CMP-ISASingleContribution"/>
+						<element ref="ns1:CMP-ISARegularContribution"/>
+						<element ref="ns1:CMP-ISAMinimumRegularWithdrawal"/>
+					</choice>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="XReferenceDataType">
+		<sequence>
+			<element minOccurs="0" ref="refdata:Domain"/>
+			<element minOccurs="0" ref="refdata:TypeCode"/>
+			<element minOccurs="0" ref="refdata:RLCode"/>
+			<element minOccurs="0" ref="refdata:RLName"/>
+			<element minOccurs="0" ref="refdata:Direction"/>
+			<element minOccurs="0" ref="refdata:DomainCode"/>
+			<element minOccurs="0" ref="refdata:DomainCodeName"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="TypeCodes">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" ref="refdata:TypeCode"/>
+		</sequence>
+	</complexType>
+</schema>

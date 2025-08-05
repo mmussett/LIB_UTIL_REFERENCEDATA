@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:index="http://www.royallondon.com/xsd/internal/util/referencedata/index/v3"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.royallondon.com/xsd/internal/util/referencedata/index/v3">
+
+	<element name="TypeCode" type="string" />
+	<element name="ItemKey" type="string" />
+	<element name="IndexKey" type="string" />
+	<element name="Value" type="string" />
+	<element name="Code" type="string" />
+	<element name="Type" type="string" />
+
+	<element name="ExpirationDateTime" type="dateTime" />
+
+	<element name="Domain" type="string" />
+	<element name="RLCode" type="string" />
+	<element name="DomainCode" type="string" />
+	<element name="Direction" type="string" />
+
+	<element name="FindTypeCodeRequest" type="index:FindTypeCodeRequest" />
+	<element name="FindTypeCodeResponse" type="index:FindTypeCodeResponse" />
+	<complexType name="FindTypeCodeRequest">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" ref="index:Type" />
+			<element maxOccurs="unbounded" minOccurs="1" ref="index:TypeCode" />
+		</sequence>
+	</complexType>
+	<complexType name="FindTypeCodeResponse">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" ref="index:TypeCode" />
+		</sequence>
+	</complexType>
+
+	<element name="PutItemRequest" type="index:PutItemRequestType" />
+	<element name="PutItemResponse" type="index:PutItemResponseType" />
+	<complexType name="PutItemRequestType">
+		<sequence>
+			<element ref="index:IndexKey" />
+			<element ref="index:ItemKey" />
+			<element ref="index:Value" />
+			<element ref="index:ExpirationDateTime" />
+		</sequence>
+	</complexType>
+
+	<complexType name="PutItemResponseType" />
+
+	<element name="PutItemsRequest" type="index:PutItemsRequestType" />
+	<element name="PutItemsResponse" type="index:PutItemsResponseType" />
+	<complexType name="PutItemsRequestType">
+		<sequence>
+			<element ref="index:IndexKey" />
+			<element maxOccurs="unbounded" name="Item">
+				<complexType>
+					<sequence>
+						<element ref="index:ItemKey" />
+						<element ref="index:Value" />
+						<element ref="index:ExpirationDateTime" />
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PutItemsResponseType" />
+
+
+	<element name="ClearRequest" type="index:ClearRequestType" />
+	<element name="ClearResponse" type="index:ClearResponseType" />
+	<complexType name="ClearRequestType" />
+	<complexType name="ClearResponseType" />
+
+	<element name="ClearIndexRequest" type="index:ClearIndexRequestType" />
+	<element name="ClearIndexResponse" type="index:ClearIndexResponseType" />
+	<complexType name="ClearIndexRequestType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="1" ref="index:IndexKey" />
+		</sequence>
+	</complexType>
+	<complexType name="ClearIndexResponseType" />
+
+	<element name="ClearIndexWithTypeRequest" type="index:ClearIndexWithTypeRequestType" />
+	<element name="ClearIndexWithTypeResponse" type="index:ClearIndexWithTypeResponseType" />
+	<complexType name="ClearIndexWithTypeRequestType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" ref="index:Type" />
+			<element maxOccurs="unbounded" minOccurs="1" ref="index:IndexKey" />
+		</sequence>
+	</complexType>
+	<complexType name="ClearIndexWithTypeResponseType" />
+
+
+	<element name="RemoveItemRequest" type="index:RemoveItemRequestType" />
+	<element name="RemoveItemResponse" type="index:RemoveItemResponseType" />
+	<complexType name="RemoveItemRequestType">
+		<sequence>
+			<element ref="index:IndexKey" />
+			<element ref="index:ItemKey" />
+		</sequence>
+	</complexType>
+
+	<complexType name="RemoveItemResponseType" />
+
+	<element name="RemoveItemsRequest" type="index:RemoveItemsRequestType" />
+	<element name="RemoveItemsResponse" type="index:RemoveItemsResponseType" />
+	<complexType name="RemoveItemsRequestType">
+		<sequence>
+			<element ref="index:IndexKey" />
+			<element maxOccurs="unbounded" ref="index:ItemKey" />
+		</sequence>
+	</complexType>
+
+	<complexType name="RemoveItemsResponseType" />
+
+
+	<element name="SetXRefRequest" type="index:SetXRefRequestType" />
+	<element name="SetXRefResponse" type="index:SetXRefResponseType" />
+	<complexType name="SetXRefRequestType">
+		<sequence>
+			<element maxOccurs="unbounded" name="Item">
+				<complexType>
+					<sequence>
+						<element ref="index:Domain" />
+						<element ref="index:TypeCode" />
+						<element ref="index:RLCode" />
+						<element ref="index:DomainCode" />
+						<element ref="index:Direction" />
+						<element ref="index:ExpirationDateTime" />
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="SetXRefResponseType" />
+
+	<element name="SetListRefRequest" type="index:SetListRefRequestType" />
+	<element name="SetListRefResponse" type="index:SetListRefResponseType" />
+	<complexType name="SetListRefRequestType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="1" name="ListRef">
+				<complexType>
+					<sequence>
+						<element ref="index:TypeCode" />
+						<element maxOccurs="unbounded" name="Item">
+							<complexType>
+								<sequence>
+									<element ref="index:Code" />
+									<element ref="index:Value" />
+									<element ref="index:ExpirationDateTime" />
+								</sequence>
+							</complexType>
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="SetListRefResponseType" />
+
+	<element name="SetExtendedRefRequest" type="index:SetExtendedRefRequestType" />
+	<element name="SetExtendedRefResponse" type="index:SetExtendedRefResponseType" />
+	<complexType name="SetExtendedRefRequestType">
+		<sequence>
+			<element ref="index:TypeCode" />
+			<element ref="index:Value" />
+			<element ref="index:ExpirationDateTime" />
+		</sequence>
+	</complexType>
+	<complexType name="SetExtendedRefResponseType" />
+
+	<element name="GetExtendedRefRequest" type="index:GetExtendedRefRequestType" />
+	<element name="GetExtendedRefResponse" type="index:GetExtendedRefResponseType" />
+	<complexType name="GetExtendedRefRequestType">
+		<sequence>
+			<element ref="index:TypeCode" />
+		</sequence>
+	</complexType>
+	<complexType name="GetExtendedRefResponseType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="0" ref="index:Value" />
+		</sequence>
+	</complexType>
+
+	<element name="SetEmptyEntryRequest" type="index:SetEmptyEntryRequestType" />
+	<element name="SetEmptyEntryResponse" type="index:SetEmptyEntryResponseType" />
+	<complexType name="SetEmptyEntryRequestType">
+		<sequence>
+			<element ref="index:Type" />
+			<element name="TypeCodes">
+				<complexType>
+					<sequence>
+						<element maxOccurs="unbounded" ref="index:TypeCode" />
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="SetEmptyEntryResponseType" />
+
+	<element name="FindMapsEntriesRequest" type="index:FindMapsEntriesRequestType" />
+	<element name="FindMapsEntriesResponse" type="index:FindMapsEntriesResponseType" />
+	<complexType name="FindMapsEntriesRequestType" />
+	<complexType name="FindMapsEntriesResponseType">
+		<sequence>
+			<element ref="index:MapEntriesList" />
+		</sequence>
+	</complexType>
+
+	<element name="MapEntriesList" type="index:MapEntriesListType" />
+	<complexType name="MapEntriesListType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" ref="index:MapEntries" />
+		</sequence>
+	</complexType>
+	<element name="MapEntries" type="index:MapEntriesType" />
+	<complexType name="MapEntriesType">
+		<sequence>
+			<element ref="index:MapEntry" />
+		</sequence>
+	</complexType>
+	<element name="MapEntry" type="index:MapEntry" />
+	<simpleType name="MapEntry">
+		<restriction base="string" />
+	</simpleType>
+
+</schema>

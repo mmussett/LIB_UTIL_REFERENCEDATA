@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_D8PjcNLPEem5Roy-BE0G6A" targetNamespace="http://tns.tibco.com/bw/composite/LIB_UTIL_REFERENCEDATA-implement.module" name="LIB_UTIL_REFERENCEDATA-implement.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_ESrtgNLPEem5Roy-BE0G6A" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ETIZcNLPEem5Roy-BE0G6A" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ETMD0NLPEem5Roy-BE0G6A" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ETNR8NLPEem5Roy-BE0G6A" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ETOgENLPEem5Roy-BE0G6A" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ETTYkNLPEem5Roy-BE0G6A" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ETUmsNLPEem5Roy-BE0G6A" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ETXC8NLPEem5Roy-BE0G6A" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ETYRENLPEem5Roy-BE0G6A" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_BlH-QNLTEem5Roy-BE0G6A" name="/services/LIB_UTIL_ReferenceData/GetXRefData/channel" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_KvPkcNLTEem5Roy-BE0G6A" name="/services/LIB_UTIL_ReferenceData/GetXRefData/ftlRequest/endpoint" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_LYmqgNLTEem5Roy-BE0G6A" name="/services/LIB_UTIL_ReferenceData/GetXRefData/ftlRequest/advanced/activityTimeOut" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_iRd4QMHLEeqkGMLONpX-Cw" name="/services/LIB_UTIL_ReferenceData/GetListRefData/channel" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qd9_oMHLEeqkGMLONpX-Cw" name="/services/LIB_UTIL_ReferenceData/GetListRefData/ftlRequest/endpoint" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_JGWeMMHMEeqkGMLONpX-Cw" name="/services/LIB_UTIL_ReferenceData/GetListRefData/ftlRequest/advanced/activityTimeOut" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_kVEHsMHLEeqkGMLONpX-Cw" name="/services/LIB_UTIL_ReferenceData/GetExtendedRefData/channel" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_q76f4MHLEeqkGMLONpX-Cw" name="/services/LIB_UTIL_ReferenceData/GetExtendedRefData/ftlRequest/endpoint" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_AUzJAMHMEeqkGMLONpX-Cw" name="/services/LIB_UTIL_ReferenceData/GetExtendedRefData/ftlRequest/advanced/activityTimeOut" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_fo8hYMHMEeqkGMLONpX-Cw" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/amcdiscountTable" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xSOaMDiGEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/annualAllowance" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0trNYDiGEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/annuityGuaranteePeriod" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_je57ELl5Eeucsa4gDwZtXQ" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/documentResendPeriod" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_43KyUDiGEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/baseAMCPercentage" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_6DxIUDiGEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/facl" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ixYxgDiHEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/incomeAffordability" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_O62kkDiKEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/incomeReleaseCharge" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_TTQSwDiLEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/incomeTaxRate" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_AJPDADiNEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/maxTaxFreeCash" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_9kjDQDiNEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/mpaa" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_4Q470DiOEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/mpan" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Fqe9sDiQEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/nextActionDate" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_IxZO0DiREeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/productCharge" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_DsZOcDiSEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/standardGrowthRates" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gjtikDiTEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/standardLifetimeAllowance" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_GXpzcDiVEeu71afJBMPALg" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/taxCharges" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_NVpY8DiYEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/taxReliefAge" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_IywAEDiZEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/taxReliefRate" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_FOYE8DiaEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/taxYear" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_4w6CMDiaEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/escalation" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wx5u0DibEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/frequency" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_t1LpkDicEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/keyValuePair" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_h89o8DidEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/product" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_dTTgwDieEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/protectionType" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_7V248DifEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/rlBankAccount" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_f7VoEDigEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/rlContactInformation" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_f3NgkDihEeu8yMDjl5lgAA" name="/services/LIB_UTIL_ReferenceData/StaticValues/GetExtendedRefData/planbookletreference" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_01d_UDTUEeu7wJkR5Q2moQ" name="/services/LIB_UTIL_ReferenceData/StaticValues/Common/ExpirationDateTimeFormat" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_pICKMDAmEeuK49Yh4Y_ggw" name="/services/LIB_UTIL_ReferenceData/StaticValues/Common/prefix/prefixExtended" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qvtSoDAmEeuK49Yh4Y_ggw" name="/services/LIB_UTIL_ReferenceData/StaticValues/Common/prefix/prefixListRef" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+</sca:composite>
